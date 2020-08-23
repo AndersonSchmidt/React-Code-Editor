@@ -1,4 +1,4 @@
-import { FETCH_FILE } from "../actions/file";
+import { FETCH_FILE } from "../actions/files";
 import { UPDATE_FILE } from "../actions/files";
 import { DELETE_FILE } from "../actions/files";
 import { SET_OPENED_FILE_ID } from "../actions/files";
