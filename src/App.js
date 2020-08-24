@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./App.module.css";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Editor from "./components/Editor/Editor";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
         <Sidebar />
       </div>
       <div className="col-md-9">
-        <h1>Text Editor</h1>
+        <Editor />
       </div>
     </div>
   );
