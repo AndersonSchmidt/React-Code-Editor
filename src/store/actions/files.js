@@ -1,7 +1,6 @@
 export const FETCH_FILE = "FETCH_FILE";
 export const UPDATE_FILE = "UPDATE_FILE";
 export const DELETE_FILE = "DELETE_FILE";
-export const SET_OPENED_FILE_ID = "SET_OPENED_FILE_ID";
 
 export const fetchFile = (id) => {
   return async (dispatch) => {
@@ -46,15 +45,9 @@ export const deleteFile = (id) => {
     );
 
     if (response.ok) {
-      dispatch({ type: DELETE_FILE, id: id });
+      dispatch({ type: DELETE_FILE });
     } else {
       throw new Error("Something went wrong");
     }
-  };
-};
-
-export const setOpenedFileId = (id) => {
-  return (dispatch) => {
-    dispatch({ type: SET_OPENED_FILE_ID, id: id });
   };
 };
