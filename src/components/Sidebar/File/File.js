@@ -7,7 +7,7 @@ const File = (props) => {
       <p>{props.file.name}</p>
       {props.file.children
         ? props.file.children.map((file) => {
-            return <File file={file} />;
+            return <File file={file} key={file.id} />;
           })
         : null}
     </div>

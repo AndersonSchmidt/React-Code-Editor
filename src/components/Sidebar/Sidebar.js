@@ -17,8 +17,8 @@ const Sidebar = (props) => {
 
   return (
     <div>
-      {filetree.map((file) => {
-        return <File file={file} />;
+      {filetree.map((file, index) => {
+        return <File file={file} key={index} />;
       })}
     </div>
   );
