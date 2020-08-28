@@ -23,6 +23,8 @@ const Editor = (props) => {
       value={content}
       options={{
         selectOnLineNumbers: true,
+        fontFamily: "Fira Code",
+        fontLigatures: true,
       }}
       onChange={onChangeHandler}
     />
