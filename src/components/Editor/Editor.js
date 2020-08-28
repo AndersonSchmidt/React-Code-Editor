@@ -17,7 +17,7 @@ const Editor = (props) => {
   return (
     <MonacoEditor
       width="100%"
-      height="600"
+      height="100vh"
       language="java"
       theme="vs-dark"
       value={content}
