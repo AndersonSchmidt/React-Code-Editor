@@ -1,5 +1,5 @@
 export const FETCH_FILE = "FETCH_FILE";
-export const UPDATE_FILE = "UPDATE_FILE";
+export const SAVE_FILE = "SAVE_FILE";
 export const DELETE_FILE = "DELETE_FILE";
 
 export const fetchFile = (id) => {
@@ -17,7 +17,7 @@ export const fetchFile = (id) => {
   };
 };
 
-export const updateFile = (file) => {
+export const SaveFile = (file) => {
   return async (dispatch) => {
     const response = await fetch(
       "https://my-json-server.typicode.com/open-veezoo/editor/files/" + file.id,
@@ -28,7 +28,7 @@ export const updateFile = (file) => {
     );
 
     if (response.ok) {
-      dispatch({ type: UPDATE_FILE, file: file });
+      dispatch({ type: SAVE_FILE, file: file });
     } else {
       throw new Error("Something went wrong");
     }
