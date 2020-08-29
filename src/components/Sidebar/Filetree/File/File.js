@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from "./File.module.css";
 import { useDispatch } from "react-redux";
-import * as filesActions from "../../../store/actions/files";
+import * as filesActions from "../../../../store/actions/files";
 
 const File = (props) => {
   const dispatch = useDispatch();
