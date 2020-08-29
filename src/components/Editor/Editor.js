@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import MonacoEditor from "react-monaco-editor";
+import * as filesActions from "../../store/actions/files";
 
 const Editor = (props) => {
+  const dispatch = useDispatch();
   const file = useSelector((state) => state.files.file);
-  const [content, setContent] = useState("");
 
   const onChangeHandler = (newValue) => {
-    setContent(newValue);
+    dispatch(filesActions.setFileContent(newValue));
   };
-
-  useEffect(() => {
-    setContent(file.content);
-  }, [file]);
 
   return (
     <MonacoEditor
@@ -20,7 +17,7 @@ const Editor = (props) => {
       height="100vh"
       language="java"
       theme="vs-dark"
-      value={content}
+      value={file.content || ""}
       options={{
         selectOnLineNumbers: true,
         fontFamily: "Fira Code",
