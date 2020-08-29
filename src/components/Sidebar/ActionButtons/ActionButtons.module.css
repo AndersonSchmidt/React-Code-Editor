@@ -1,3 +1,11 @@
 .Container {
   margin: 20px 0px;
 }
+
+.Button {
+  cursor: pointer;
+}
+
+.Icon {
+  margin-bottom: 3px;
+}
