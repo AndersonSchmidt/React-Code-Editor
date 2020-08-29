@@ -7,13 +7,13 @@ const ActionButtons = (props) => {
   return (
     <div className={`row text-center ${classes.Container}`}>
       <div className={`col ${classes.Button}`}>
-        <button type="button" class="btn btn-dark">
+        <button type="button" className="btn btn-dark">
           <IoIosSave size={24} color="#2A8FBD" className={classes.Icon} /> Save
         </button>
       </div>
       <div className={`col ${classes.Button}`}>
         <p>
-          <button type="button" class="btn btn-dark">
+          <button type="button" className="btn btn-dark">
             <FaTrash size={18} color="#FF4040" className={classes.Icon} />{" "}
             Delete
           </button>
