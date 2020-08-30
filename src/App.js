@@ -9,7 +9,7 @@ function App() {
       <div className={`col-md-3 ${classes.SidebarCol}`}>
         <Sidebar />
       </div>
-      <div className="col-md-9">
+      <div className={`col-md-9 ${classes.EditorCol}`}>
         <Editor />
       </div>
     </div>

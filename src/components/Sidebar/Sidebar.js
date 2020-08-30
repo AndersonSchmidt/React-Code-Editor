@@ -4,7 +4,7 @@ import Filetree from "./Filetree/Filetree";
 
 const Sidebar = (props) => {
   return (
-    <div>
+    <div style={{overflow: 'scroll', height: '100vh'}}>
       <ActionButtons />
       <Filetree />
     </div>

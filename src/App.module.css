@@ -1,3 +1,7 @@
 .SidebarCol {
-  overflow: hidden;
+  padding-right: 0px;
+}
+
+.EditorCol {
+  padding-left: 0px;
 }
