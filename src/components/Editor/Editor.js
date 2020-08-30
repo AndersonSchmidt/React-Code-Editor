@@ -6,6 +6,7 @@ import * as filesActions from "../../store/actions/files";
 const Editor = (props) => {
   const dispatch = useDispatch();
   const file = useSelector((state) => state.files.file);
+  const language = file.name.split(".").slice(-1)[0];
 
   const onChangeHandler = (newValue) => {
     dispatch(filesActions.setFileContent(newValue));
@@ -15,7 +16,7 @@ const Editor = (props) => {
     <MonacoEditor
       width="100%"
       height="100vh"
-      language="java"
+      language={language}
       theme="vs-dark"
       value={file.content}
       options={{
