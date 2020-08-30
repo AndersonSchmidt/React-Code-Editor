@@ -1,0 +1,13 @@
+.Container {
+  display: flex;
+  flex-direction: row;
+}
+
+.ExtensionIcon {
+  width: 20px;
+  margin: 0px 5px 19px;
+}
+
+.FolderIcon {
+  margin-right: 5px;
+}

@@ -3,6 +3,7 @@ import classes from "./File.module.css";
 import { useDispatch } from "react-redux";
 import * as filesActions from "../../../../store/actions/files";
 import Swal from "sweetalert2";
+import FileName from "./FileName/FileName";
 
 const File = (props) => {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const File = (props) => {
 
   return (
     <div className={classes.Container}>
-      <p onClick={isDirectory ? toggleShow : fetchFile}>{file.name}</p>
+      <FileName clicked={isDirectory ? toggleShow : fetchFile} file={file} show={show}/>
       {show ? (
         <div>
           {children.map((file) => {
