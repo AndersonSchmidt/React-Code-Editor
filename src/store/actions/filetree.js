@@ -1,4 +1,5 @@
 export const FETCH_FILETREE = "FETCH_FILETREE";
+export const DELETE_FILETREE_FILE = "DELETE_FILETREE_FILE";
 
 export const fetchFiletree = () => {
   return async (dispatch) => {
@@ -8,5 +9,13 @@ export const fetchFiletree = () => {
 
     const filetree = await response.json();
     dispatch({ type: FETCH_FILETREE, filetree: filetree });
+  };
+};
+
+export const deleteFiletreeFile = () => {
+  return (dispatch, getState) => {
+    const fileId = getState().files.file.id;
+
+    dispatch({ type: DELETE_FILETREE_FILE, fileId: fileId });
   };
 };

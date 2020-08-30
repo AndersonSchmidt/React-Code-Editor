@@ -35,10 +35,12 @@ export const saveFile = () => {
   };
 };
 
-export const deleteFile = (id) => {
-  return async (dispatch) => {
+export const deleteFile = () => {
+  return async (dispatch, getState) => {
+    const file = getState().files.file;
+
     const response = await fetch(
-      "https://my-json-server.typicode.com/open-veezoo/editor/files/" + id,
+      "https://my-json-server.typicode.com/open-veezoo/editor/files/" + file.id,
       {
         method: "DELETE",
       }
