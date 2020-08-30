@@ -17,7 +17,7 @@ const Editor = (props) => {
       height="100vh"
       language="java"
       theme="vs-dark"
-      value={file.content || ""}
+      value={file.content}
       options={{
         selectOnLineNumbers: true,
         fontFamily: "Fira Code",

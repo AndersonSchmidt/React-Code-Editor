@@ -1,7 +1,7 @@
 import { FETCH_FILE, DELETE_FILE, SET_FILE_CONTENT } from "../actions/files";
 
 const initialState = {
-  file: {},
+  file: { id: null, name: "", content: "" },
 };
 
 const fileseducer = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const fileseducer = (state = initialState, action) => {
     case FETCH_FILE:
       return { file: action.file };
     case DELETE_FILE:
-      return { file: {} };
+      return initialState;
     case SET_FILE_CONTENT:
       return { file: { ...state.file, content: action.content } };
     default:
