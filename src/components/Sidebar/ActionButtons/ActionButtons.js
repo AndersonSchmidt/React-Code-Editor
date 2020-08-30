@@ -3,7 +3,6 @@ import classes from "./ActionButtons.module.css";
 import { IoIosSave } from "react-icons/io";
 import { FaTrash } from "react-icons/fa";
 import * as filesActions from "../../../store/actions/files";
-import * as filetreeActions from "../../../store/actions/filetree";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 
@@ -21,7 +20,6 @@ const ActionButtons = (props) => {
 
   const deleteFile = async () => {
     try {
-      dispatch(filetreeActions.deleteFiletreeFile());
       await dispatch(filesActions.deleteFile());
       Swal.fire("Deleted!", "The file was successfully deleted.", "success");
     } catch (err) {

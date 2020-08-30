@@ -1,3 +1,4 @@
+import * as filetreeActions from "../../store/actions/filetree";
 export const FETCH_FILE = "FETCH_FILE";
 export const DELETE_FILE = "DELETE_FILE";
 export const SET_FILE_CONTENT = "SET_FILE_CONTENT";
@@ -47,6 +48,7 @@ export const deleteFile = () => {
     );
 
     if (response.ok) {
+      dispatch(filetreeActions.deleteFiletreeFile(file.id));
       dispatch({ type: DELETE_FILE });
     } else {
       throw new Error("Something went wrong");

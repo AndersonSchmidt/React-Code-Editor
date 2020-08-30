@@ -12,10 +12,8 @@ export const fetchFiletree = () => {
   };
 };
 
-export const deleteFiletreeFile = () => {
-  return (dispatch, getState) => {
-    const fileId = getState().files.file.id;
-
+export const deleteFiletreeFile = (fileId) => {
+  return (dispatch) => {
     dispatch({ type: DELETE_FILETREE_FILE, fileId: fileId });
   };
 };
