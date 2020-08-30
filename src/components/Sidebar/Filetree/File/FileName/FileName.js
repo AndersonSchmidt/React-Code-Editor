@@ -31,7 +31,7 @@ const FileName = (props) => {
   return (
     <div className={classes.Container} onClick={props.clicked}>
       {icon}
-      <p>{file.name}</p>
+      <p className={classes.FileName}>{file.name}</p>
     </div>
   );
 };
