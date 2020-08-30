@@ -5,17 +5,28 @@ import { FaTrash } from "react-icons/fa";
 import * as filesActions from "../../../store/actions/files";
 import * as filetreeActions from "../../../store/actions/filetree";
 import { useDispatch } from "react-redux";
+import Swal from "sweetalert2";
 
 const ActionButtons = (props) => {
   const dispatch = useDispatch();
 
-  const saveFile = () => {
-    dispatch(filesActions.saveFile());
+  const saveFile = async () => {
+    try {
+      await dispatch(filesActions.saveFile());
+      Swal.fire("Saved!", "The file was successfully saved.", "success");
+    } catch (err) {
+      Swal.fire("Oops...", "Something went wrong!", "error");
+    }
   };
 
-  const deleteFile = () => {
-    dispatch(filesActions.deleteFile());
-    dispatch(filetreeActions.deleteFiletreeFile());
+  const deleteFile = async () => {
+    try {
+      dispatch(filetreeActions.deleteFiletreeFile());
+      await dispatch(filesActions.deleteFile());
+      Swal.fire("Deleted!", "The file was successfully deleted.", "success");
+    } catch (err) {
+      Swal.fire("Oops...", "Something went wrong!", "error");
+    }
   };
 
   return (
