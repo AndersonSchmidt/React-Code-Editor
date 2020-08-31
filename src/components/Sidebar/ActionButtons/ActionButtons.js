@@ -6,7 +6,7 @@ import * as filesActions from "../../../store/actions/files";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 
-const ActionButtons = (props) => {
+const ActionButtons = () => {
   const dispatch = useDispatch();
 
   const saveFile = async () => {
@@ -29,18 +29,15 @@ const ActionButtons = (props) => {
 
   return (
     <div className={`row text-center ${classes.Container}`}>
-      <div className={`col ${classes.Button}`}>
+      <div className="col">
         <button type="button" className="btn btn-dark" onClick={saveFile}>
           <IoIosSave size={24} color="#2A8FBD" className={classes.Icon} /> Save
         </button>
       </div>
-      <div className={`col ${classes.Button}`}>
-        <p>
-          <button type="button" className="btn btn-dark" onClick={deleteFile}>
-            <FaTrash size={18} color="#FF4040" className={classes.Icon} />{" "}
-            Delete
-          </button>
-        </p>
+      <div className="col">
+        <button type="button" className="btn btn-dark" onClick={deleteFile}>
+          <FaTrash size={18} color="#FF4040" className={classes.Icon} /> Delete
+        </button>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import * as filetreeActions from "../../../store/actions/filetree";
 import File from "./File/File";
 import Swal from "sweetalert2";
 
-const Filetree = (props) => {
+const Filetree = () => {
   const dispatch = useDispatch();
   const filetree = useSelector((state) => state.filetree.filetree);
 

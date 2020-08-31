@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import MonacoEditor from "react-monaco-editor";
 import * as filesActions from "../../store/actions/files";
 
-const Editor = (props) => {
+const Editor = () => {
   const dispatch = useDispatch();
   const file = useSelector((state) => state.files.file);
   const language = file.name.split(".").slice(-1)[0];
